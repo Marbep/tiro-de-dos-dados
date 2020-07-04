@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Dados</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+    <h1>Simulación de tiro de dados</h1>
+<div class="contenedor">
+    <h2>Juegos de dados</h2>
+        <p>Saca un 12 para ganar</p>
+            <div class="daditos">
+                <img src="img/cara1.png" alt="dado" id="dadouno">
+                <img src="img/cara1.png" alt="dado" id="dadodos">
+            </div>
+    <button onclick="sortear()">Tirar!</button>
+</div>
+<style type="text/css">
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.contenedor{
+    width: 300px;
+    height: 300px;
+    border: 1.7px solid #7401DF;
+    background: #8017e23f;
+    text-align: center;
+    display: table-cell;
+}
+
+h2{
+    color: #7401DF;
+    font-size: 25px;
+}
+
+p{
+    color: #3b3737;
+}
+
+.daditos{
+    margin-bottom: 12px;
+}
+
+button{
+    border: 1px solid #7401DF;
+    background: #7401dfa8;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+</style>
+
+    <script type="text/javascript">
+
+    function sortear(){
+    var sorteo1 = Math.floor(Math.random()*6+1);
+    var sorteo2 = Math.floor(Math.random()*6+1);
+    var mensaje= 'Ganaste!';
+
+        switch(sorteo1){
+        case 1: 
+            document.getElementById("dadouno").src = "img/cara1.png";
+            break;
+        case 2: 
+            document.getElementById("dadouno").src = "img/cara2.png";
+            break;
+        case 3: 
+            document.getElementById("dadouno").src = "img/cara3.png";
+            break;
+        case 4: 
+            document.getElementById("dadouno").src = "img/cara4.png";
+            break;
+        case 5: 
+            document.getElementById("dadouno").src = "img/cara5.png";
+            break;
+        case 6: 
+            document.getElementById("dadouno").src = "img/cara6.png";
+            break;
+            default:
+            break;
+    }
+
+    switch(sorteo2){
+        case 1: 
+            document.getElementById("dadodos").src = "img/cara1.png";
+            break;
+        case 2: 
+            document.getElementById("dadodos").src = "img/cara2.png";
+            break;
+        case 3: 
+            document.getElementById("dadodos").src = "img/cara3.png";
+            break;
+        case 4: 
+            document.getElementById("dadodos").src = "img/cara4.png";
+            break;
+        case 5: 
+            document.getElementById("dadodos").src = "img/cara5.png";
+            break;
+        case 6: 
+            document.getElementById("dadodos").src = "img/cara6.png";
+            break;
+            default:
+            break;
+    }
+    if(sorteo1==6 && sorteo2==6){
+        alert('Felicidades, ganaste!!')
+    }
+    }
+    
+    </script>
+</body>
+</html>
