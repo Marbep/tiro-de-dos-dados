@@ -18,6 +18,13 @@
             </div>
     <button onclick="sortear()">Tirar!</button>
 </div>
+
+<div class="resultados">
+    <div id="tabla-resultados">
+    </div>
+</div>
+
+
 <style type="text/css">
 body{
     font-family: 'Roboto', sans-serif;
@@ -61,7 +68,7 @@ button{
     function sortear(){
     var sorteo1 = Math.floor(Math.random()*6+1);
     var sorteo2 = Math.floor(Math.random()*6+1);
-    var mensaje= 'Felicidades, ganaste!!';
+    var mensaje= 'Haz ganado!';
 
         switch(sorteo1){
         case 1: 
@@ -111,7 +118,13 @@ button{
     if(sorteo1==6 && sorteo2==6){
         alert(mensaje)
     }
+    
+    if(sortear != 6){
+        console.log('Resultado de tiradas: '+ sorteo1 +' y '+ sorteo2)
+        document.getElementById("tabla-resultados").innerHTML= `<p>Resultado de tiradas: ${sorteo1}  y ${sorteo2}</p>`
     }
+    }
+    
     
     </script>
 </body>
